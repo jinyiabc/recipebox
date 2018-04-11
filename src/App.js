@@ -13,13 +13,14 @@ class App extends Component {
     super(props);
     //this.deleteRecipe = this.deleteRecipe.bind(this);
     this.state = {
-      data : [ {name:'pie',
-                     ingredients: ['a','b'
-                     ]},
-                     { name:'sandwitch',
-                     ingredients: ['c','d','f','g'
-                     ]}
-                   ]
+      data : [
+          {name:'pie',
+           ingredients: ['a','b'
+            ]},
+          {name:'sandwitch',
+            ingredients: ['c','d','f','g'
+            ]}
+            ]
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
@@ -93,19 +94,19 @@ class App extends Component {
     //const data1 = JSON.parse(localStorage.getItem('myData'));
     //console.log(data1);
 
-    const accordionInstance1 = 'test'
-    // data.map((item,index)=>
-    //  <Panel header={item.name} key={item.name.toString()} eventKey={index+1}  bsStyle="primary">
-    //    <CustomComponent children={item.ingredients} />
-    //
-    //        <EditRecipe currentRecipe={this.handleEdit} indexOf={index} recipe={item.name} ingredients={item.ingredients}/>
-    //
-    //      <ButtonToolbar>
-    //        <Button bsStyle="danger" onClick={this.deleteRecipe.bind(this,item,index)}>Delete</Button>
-    //      </ButtonToolbar>
-    //
-    // </Panel>
-    // );
+    const accordionInstance1 =
+    data.map((item,index)=>
+     <Panel header={item.name} key={item.name.toString()} eventKey={index+1}  bsStyle="primary">
+       <CustomComponent children={item.ingredients} />
+
+           <EditRecipe currentRecipe={this.handleEdit} indexOf={index} recipe={item.name} ingredients={item.ingredients}/>
+
+         <ButtonToolbar>
+           <Button bsStyle="danger" onClick={this.deleteRecipe.bind(this,item,index)}>Delete</Button>
+         </ButtonToolbar>
+
+    </Panel>
+    );
 
 
     return (
